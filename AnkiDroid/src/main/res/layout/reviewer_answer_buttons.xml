@@ -89,6 +89,7 @@
             android:layout_height="fill_parent"
             android:orientation="horizontal"
             android:visibility="gone"
+            android:layout_margin="4dp"
             tools:visibility="visible">
 
             <LinearLayout

@@ -2054,19 +2054,36 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity i
 
         answer = typeAnsAnswerFilter(answer, userAnswer, correctAnswer);
 
-        mIsSelecting = false;
-        updateCard(CardAppearance.enrichWithQADiv(answer, true));
-        displayAnswerBottomBar();
-        // If the user wants to show the next question automatically
-        if (mUseTimer) {
-            long delay = mWaitQuestionSecond * 1000 + mUseTimerDynamicMS;
-            if (delay > 0) {
-                mTimeoutHandler.removeCallbacks(mShowQuestionTask);
-                if (!mSpeakText) {
-                    mTimeoutHandler.postDelayed(mShowQuestionTask, delay);
-                }
-            }
-        }
+        final String finalAnswer = answer;
+
+        // Animation to flip the card before showing the answer
+        mCardFrame.animate().withLayer()
+                .scaleX(0f)
+                .setDuration(300)
+                .withEndAction(() -> {
+
+                            mIsSelecting = false;
+
+                            updateCard(CardAppearance.enrichWithQADiv(finalAnswer, true));
+                            displayAnswerBottomBar();
+                            // If the user wants to show the next question automatically
+                            if (mUseTimer) {
+                                long delay = mWaitQuestionSecond * 1000 + mUseTimerDynamicMS;
+                                if (delay > 0) {
+                                    mTimeoutHandler.removeCallbacks(mShowQuestionTask);
+                                    if (!mSpeakText) {
+                                        mTimeoutHandler.postDelayed(mShowQuestionTask, delay);
+                                    }
+                                }
+                            }
+
+                            // second quarter turn
+                            mCardFrame.animate().withLayer()
+                                    .scaleX(1)
+                                    .setDuration(300)
+                                    .start();
+                        }
+                ).start();
     }
 
 
@@ -3748,7 +3765,7 @@ see card.js for available functions
             return shouldDisplayMark();
         }
 
-        
+
         @JavascriptInterface
         public int ankiGetCardFlag() {
             return mCurrentCard.userFlag();
@@ -3765,7 +3782,7 @@ see card.js for available functions
 
         @JavascriptInterface
         public String ankiGetNextTime4() { return (String) mNext4.getText(); }
-        
+
         @JavascriptInterface
         public int ankiGetCardReps() {
             return mCurrentCard.getReps();
