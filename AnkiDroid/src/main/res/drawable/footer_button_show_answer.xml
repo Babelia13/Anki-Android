@@ -5,19 +5,19 @@
         <item android:state_pressed="true">
             <shape android:shape="rectangle" >
                 <corners android:radius="@dimen/answer_buttons_corner_radius" />
-                <solid android:color="@color/material_green_200" />
+                <solid android:color="@color/theme_light_primary_dark" />
             </shape>
         </item>
         <item android:state_focused="true">
             <shape android:shape="rectangle" >
                 <corners android:radius="@dimen/answer_buttons_corner_radius" />
-                <solid android:color="@color/material_green_700" />
+                <solid android:color="@color/theme_light_primary_dark" />
             </shape>
         </item>
         <item>
             <shape android:shape="rectangle" >
                 <corners android:radius="@dimen/answer_buttons_corner_radius" />
-                <solid android:color="@color/material_green_500" />
+                <solid android:color="@color/theme_light_primary" />
             </shape>
         </item>
     </selector>

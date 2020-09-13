@@ -4,20 +4,17 @@
         <selector>
             <item android:state_pressed="true">
                 <shape android:shape="rectangle" >
-                    <corners android:radius="@dimen/answer_buttons_corner_radius" />
-                    <solid android:color="@color/material_light_blue_200" />
+                    <solid android:color="@color/theme_dark_primary_dark" />
                 </shape>
             </item>
             <item android:state_focused="true">
                 <shape android:shape="rectangle" >
-                    <corners android:radius="@dimen/answer_buttons_corner_radius" />
-                    <solid android:color="@color/material_light_blue_700" />
+                    <solid android:color="@color/theme_dark_primary_dark" />
                 </shape>
             </item>
             <item>
                 <shape android:shape="rectangle" >
-                    <corners android:radius="@dimen/answer_buttons_corner_radius" />
-                    <solid android:color="@color/material_light_blue_500" />
+                    <solid android:color="@color/theme_dark_primary" />
                 </shape>
             </item>
         </selector>

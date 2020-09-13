@@ -4,13 +4,13 @@
     <item android:id="@android:id/mask">
         <shape android:shape="rectangle">
             <corners android:radius="@dimen/answer_buttons_corner_radius" />
-            <solid android:color="@color/answer_button_easy_background" />
+            <solid android:color="@color/theme_dark_primary" />
         </shape>
     </item>
     <item android:id="@android:id/background">
         <shape android:shape="rectangle">
             <corners android:radius="@dimen/answer_buttons_corner_radius" />
-            <solid android:color="@color/answer_button_easy_background" />
+            <solid android:color="@color/theme_dark_primary" />
         </shape>
     </item>
 </ripple>

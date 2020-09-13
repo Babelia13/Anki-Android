@@ -2,11 +2,15 @@
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="@color/answer_buttons_highlight_color">
     <item android:id="@android:id/mask">
-        <shape android:shape="rectangle" >
-            <solid android:color="@color/material_blue_grey_700" />
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/answer_buttons_corner_radius" />
+            <solid android:color="@color/answer_button_hard_background" />
         </shape>
     </item>
-    <item
-        android:id="@android:id/background"
-        android:drawable="@color/material_blue_grey_700" />
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/answer_buttons_corner_radius" />
+            <solid android:color="@color/answer_button_hard_background" />
+        </shape>
+    </item>
 </ripple>

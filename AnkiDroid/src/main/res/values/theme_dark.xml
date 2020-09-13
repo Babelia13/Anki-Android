@@ -61,6 +61,7 @@
         <item name="goodButtonTextColor">@color/white</item>
         <item name="easyButtonTextColor">@color/white</item>
         <!-- Reviewer button drawables -->
+        <item name="showAnswerButtonRef">@drawable/footer_button_show_answer_dark</item>
         <item name="againButtonRef">@drawable/footer_button_again_dark</item>
         <item name="hardButtonRef">@drawable/footer_button_hard_dark</item>
         <item name="goodButtonRef">@drawable/footer_button_good_dark</item>

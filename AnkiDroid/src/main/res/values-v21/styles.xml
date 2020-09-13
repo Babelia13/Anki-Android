@@ -21,6 +21,10 @@
     </style>
 
     <style name="FooterButton" parent="FooterButtonBase">
+        <item name="android:fontFamily">@string/font_fontFamily_light</item>
+    </style>
+
+    <style name="ShowAnswerButton" parent="ShowAnswerButtonBase">
         <item name="android:fontFamily">@string/font_fontFamily_medium</item>
     </style>
 

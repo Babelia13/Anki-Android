@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- General dimens -->
+    <dimen name="general_layout_padding">16dp</dimen>
+    <dimen name="general_layout_margin">16dp</dimen>
+    <dimen name="general_button_height">52dp</dimen>
+
     <dimen name="touch_target">48dp</dimen>
     <dimen name="default_width">56dp</dimen>
     <dimen name="keyline_1">16dp</dimen>
@@ -25,4 +31,8 @@
     <dimen name="deck_picker_left_padding_small">0dp</dimen>
     <dimen name="deck_picker_left_padding">24dp</dimen>
     <dimen name="deck_picker_right_padding">4dp</dimen>
+
+    <!-- Reviewer answer buttons -->
+    <dimen name="answer_buttons_corner_radius">12dp</dimen>
+
 </resources>

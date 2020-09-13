@@ -4,16 +4,19 @@
     <selector>
         <item android:state_pressed="true">
             <shape android:shape="rectangle" >
+                <corners android:radius="@dimen/answer_buttons_corner_radius" />
                 <solid android:color="@color/material_red_500" />
             </shape>
         </item>
         <item android:state_focused="true">
             <shape android:shape="rectangle" >
+                <corners android:radius="@dimen/answer_buttons_corner_radius" />
                 <solid android:color="@color/material_red_900" />
             </shape>
         </item>
         <item>
             <shape android:shape="rectangle" >
+                <corners android:radius="@dimen/answer_buttons_corner_radius" />
                 <solid android:color="@color/material_red_700" />
             </shape>
         </item>

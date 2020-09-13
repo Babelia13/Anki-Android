@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:id="@+id/bottom_area_layout"
-    android:layout_width="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:padding="@dimen/general_layout_padding">
 
     <!-- "Type in the answer" bar -->
     <EditText
@@ -15,37 +16,26 @@
         android:hint="@string/type_answer_hint"
         android:imeOptions="actionDone"
         android:inputType="text|textNoSuggestions" />
-    <!--
-         Looks like setting android:imeActionLabel confuses the
-         original AOSP soft keyboard, so don't.
-    -->
+    <!-- Looks like setting android:imeActionLabel confuses the
+         original AOSP soft keyboard, so don't-->
 
     <FrameLayout
         android:id="@+id/preview_buttons_layout"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:orientation="horizontal"
         android:background="?attr/hardButtonRef"
+        android:orientation="horizontal"
         android:visibility="gone"
         tools:visibility="visible">
-
-        <TextView
-            android:id="@+id/preview_flip_flashcard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="?attr/answerButtonTextColor"
-            android:text="@string/show_answer"
-            style="@style/FooterButton" />
 
         <ImageView
             android:id="@+id/preview_previous_flashcard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start|center_vertical"
-            android:padding="12dp"
-            android:focusable="true"
             android:background="@drawable/item_background_light_selectable_borderless"
+            android:focusable="true"
+            android:padding="12dp"
             app:srcCompat="@drawable/ic_baseline_chevron_left_24"
             app:tint="?attr/hardButtonTextColor" />
 
@@ -54,30 +44,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
-            android:padding="12dp"
-            android:focusable="true"
             android:background="@drawable/item_background_light_selectable_borderless"
+            android:focusable="true"
+            android:padding="12dp"
             app:srcCompat="@drawable/ic_baseline_chevron_right_24"
             app:tint="?attr/hardButtonTextColor" />
+
+        <TextView
+            android:id="@+id/preview_flip_flashcard"
+            style="@style/FooterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/show_answer"
+            android:textColor="?attr/answerButtonTextColor" />
     </FrameLayout>
 
     <FrameLayout
         android:id="@+id/answer_options_layout"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/flashcard_layout_flip"
-            android:layout_width="fill_parent"
-            android:layout_height="@dimen/touch_target"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/general_button_height">
 
             <Button
-                style="@style/FooterButton"
-                android:background="?attr/hardButtonRef"
                 android:id="@+id/flip_card"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                style="@style/ShowAnswerButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/showAnswerButtonRef"
                 android:clickable="false"
                 android:text="@string/show_answer"
                 android:textColor="?attr/answerButtonTextColor" />
@@ -87,18 +85,18 @@
             android:id="@+id/ease_buttons"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_margin="4dp"
             android:orientation="horizontal"
             android:visibility="gone"
-            android:layout_margin="4dp"
             tools:visibility="visible">
 
             <LinearLayout
-                style="@style/FooterButton"
-                android:background="?attr/againButtonRef"
                 android:id="@+id/flashcard_layout_ease1"
+                style="@style/FooterButton"
                 android:layout_width="0dip"
                 android:layout_height="@dimen/touch_target"
                 android:layout_weight="1"
+                android:background="?attr/againButtonRef"
                 android:orientation="vertical">
 
                 <TextView
@@ -108,17 +106,17 @@
 
                 <TextView
                     android:id="@+id/ease1"
-                    android:text="@string/ease_button_again"
-                    style="@style/AgainButtonEaseStyle"/>
+                    style="@style/AgainButtonEaseStyle"
+                    android:text="@string/ease_button_again" />
             </LinearLayout>
 
             <LinearLayout
-                style="@style/FooterButton"
-                android:background="?attr/hardButtonRef"
                 android:id="@+id/flashcard_layout_ease2"
+                style="@style/FooterButton"
                 android:layout_width="0dip"
                 android:layout_height="@dimen/touch_target"
                 android:layout_weight="1"
+                android:background="?attr/hardButtonRef"
                 android:orientation="vertical">
 
                 <TextView
@@ -128,17 +126,17 @@
 
                 <TextView
                     android:id="@+id/ease2"
-                    android:text="@string/ease_button_hard"
-                    style="@style/HardButtonEaseStyle" />
+                    style="@style/HardButtonEaseStyle"
+                    android:text="@string/ease_button_hard" />
             </LinearLayout>
 
             <LinearLayout
-                style="@style/FooterButton"
-                android:background="?attr/goodButtonRef"
                 android:id="@+id/flashcard_layout_ease3"
+                style="@style/FooterButton"
                 android:layout_width="0dip"
                 android:layout_height="@dimen/touch_target"
                 android:layout_weight="1"
+                android:background="?attr/goodButtonRef"
                 android:orientation="vertical">
 
                 <TextView
@@ -148,17 +146,17 @@
 
                 <TextView
                     android:id="@+id/ease3"
-                    android:text="@string/ease_button_good"
-                    style="@style/GoodButtonEaseStyle"/>
+                    style="@style/GoodButtonEaseStyle"
+                    android:text="@string/ease_button_good" />
             </LinearLayout>
 
             <LinearLayout
-                style="@style/FooterButton"
-                android:background="?attr/easyButtonRef"
                 android:id="@+id/flashcard_layout_ease4"
+                style="@style/FooterButton"
                 android:layout_width="0dip"
                 android:layout_height="@dimen/touch_target"
                 android:layout_weight="1"
+                android:background="?attr/easyButtonRef"
                 android:orientation="vertical">
 
                 <TextView
@@ -168,9 +166,10 @@
 
                 <TextView
                     android:id="@+id/ease4"
-                    android:text="@string/ease_button_easy"
-                    style="@style/EasyButtonEaseStyle" />
+                    style="@style/EasyButtonEaseStyle"
+                    android:text="@string/ease_button_easy" />
             </LinearLayout>
+
         </LinearLayout>
     </FrameLayout>
 </LinearLayout>

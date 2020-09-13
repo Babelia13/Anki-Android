@@ -26,6 +26,7 @@
         <!-- Reviewer colors -->
         <item name="topBarColor">@color/theme_plain_primary_light</item>
         <!-- Reviewer button drawables -->
+        <item name="showAnswerButtonRef">@drawable/footer_button_all_plain</item>
         <item name="againButtonRef">@drawable/footer_button_all_plain</item>
         <item name="hardButtonRef">@drawable/footer_button_all_plain</item>
         <item name="goodButtonRef">@drawable/footer_button_all_plain</item>
